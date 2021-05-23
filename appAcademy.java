@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class appAcademy {
 
 	private static String[] nomes; // o que significa static?
-	private static Float[] notasAv1; // Por que esses tipos s„o com letras mai˙sculas
+	private static Float[] notasAv1; // Por que esses tipos s√£o com letras mai√∫sculas
 	private static Float[] notasAv2;
 	
 	private static int index;
@@ -18,7 +18,7 @@ public class appAcademy {
 		notasAv1 = new Float[QTDE];
 		notasAv2 = new Float[QTDE];
 		
-		String opcao = null; // por que essa vari·vel eu n„o preciso colocar como privada?
+		String opcao = null; // por que essa vari√°vel eu n√£o preciso colocar como privada?
 		
 		do {
 			System.out.println("[1] Registrar as notas de um novo aluno.");
@@ -26,15 +26,15 @@ public class appAcademy {
 			System.out.println("[3] Consultar notas da turma.");
 			System.out.println("[4] Sair.");
 			
-			System.out.println("Informe a opÁ„o desejada: ");
+			System.out.println("Informe a op√ß√£o desejada: ");
 			opcao = in.next();
 			
-			//Como eu faÁo para comentar blocos de texto?
+			//Como eu fa√ßo para comentar blocos de texto?
 			
-			switch (opcao) { //È uma estrutura condicional?
+			switch (opcao) { //switch √© considerada uma estrutura condicional?
 			case"1": 
 				if(index < QTDE) {
-					System.out.println("Informe seu nome: "); // Como eu faÁo para voltar um Tab, sÛ consigo avanÁar
+					System.out.println("Informe seu nome: "); // Como eu fa√ßo para voltar um Tab, s√≥ consigo avan√ßar
 					nomes[index] = in.next(); 
 								
 					System.out.println("Informe a primeira nota: ");	
@@ -45,12 +45,12 @@ public class appAcademy {
 								
 					index++;
 					} else {
-					System.out.println("N„o existe mais vaga para cadastramento");
+					System.out.println("N√£o existe mais vaga para cadastramento");
 					}
 					break;
 				
 			case"2":
-					System.out.println("Informe a posiÁ„o: ");
+					System.out.println("Informe a posi√ß√£o: ");
 					int pos = in.nextInt();
 					
 					if(pos >= 0 && pos < index) {
@@ -63,16 +63,16 @@ public class appAcademy {
 				if(index != 0 ) {
 					imprimir();
 				} else {
-					System.out.println("N„o existe boletim Cadastrada");
+					System.out.println("N√£o existe boletim Cadastrada");
 				}
 					break;
 				
 			case"4":
-					System.out.println("VocÍ encerrou sua pesquisa");
+					System.out.println("Voc√™ encerrou sua pesquisa");
 					break;
 				
 			default:
-					System.out.println("OpÁ„o inv·lida");
+					System.out.println("Op√ß√£o inv√°lida");
 					break;
 			}	
 			
@@ -87,8 +87,8 @@ public class appAcademy {
 				imprimir(i);
 			}
 		}
-		private static void imprimir(int posicao){ // o que eu passar como par‚metro na chamada do mÈtodo È o que vai ser impresso?
-													//Somente o que eu passar, os restante n„o imprime.
+		private static void imprimir(int posicao){
+			
 			float media = calcularMedia(posicao); 
 				
 			System.out.printf("[%d] - %s - %.2f - %.2f - %.2f - %s\n",
@@ -99,16 +99,7 @@ public class appAcademy {
 				media,
 				situacaoDoAluno(media));
 			}
-		//private static float mediaDosAlunos() {
 			
-			//float soma = 0;
-			
-			//for(int i = 0; i < index; i++ ) {
-				//soma =  soma + calcularMedia(i);
-			//}
-			
-			//return soma / index;
-		//}	
 		private static float calcularMedia(int idx) {
 			return (notasAv1[idx] + notasAv2[idx]) / 2;
 		}
